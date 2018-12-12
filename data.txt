@@ -1,0 +1,10 @@
+sachin,100
+virat,43
+dhoni,45
+Rohit,200
+Shikhar,95
+Hardik,67
+Bhuvneshwar,34
+Yuvraj,75
+Irfan,37
+Ajinkya,87
