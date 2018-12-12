@@ -41,7 +41,7 @@ elif choice=='2':
 elif choice=='3':
     plt.scatter(names,runs)
 else:
-    print("Invalid Option.")
+    print("Invalid Option..")
 
 
 # In[ ]:
