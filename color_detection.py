@@ -30,7 +30,13 @@ while True:
 	total=res_red+res_blue+res_green+res_yellow
 	
 	#tracking the red Color	
-	qcolor",(x,y),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255))
+	(_,contours,hierarchy)=cv2.findContours(red,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+	for pic, contour in enumerate(contours):
+		area = cv2.contourArea(contour)
+		if(area>200):
+			x,y,w,h = cv2.boundingRect(contour)	
+			frame = cv2.rectangle(total,(x,y),(x+w,y+h),(255,0,0),2)
+			cv2.putText(total,"Red color",(x,y),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255))
 			
 	#Tracking the Blue Color
 	(_,contours,hierarchy)=cv2.findContours(blue,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
