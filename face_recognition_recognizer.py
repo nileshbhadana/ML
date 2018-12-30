@@ -43,7 +43,7 @@ while cam.isOpened():
         label,confidence=recognizer.predict(gray_frame[y:y+h,x:x+w])
         
         #checking for confidence (the lower the confidence the more accurate the prediction is)
-        if confidence<30:
+        if confidence<50:
             msg="Face Detected"
             
             #printing the message 
@@ -70,7 +70,7 @@ if detected==1:
     from selenium import webdriver
     
     #creating driver instance
-    driver = webdriver.Chrome(executable_path='/home/nilesh/Downloads/chromedriver')
+    driver = webdriver.Firefox()
     
     #username for facebook
     user="nileshbhadana"

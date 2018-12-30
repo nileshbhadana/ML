@@ -50,9 +50,9 @@ while cam.isOpened():
     cv2.imshow('capturing images',frame)
     
     #handler
-    if cv2.waitKey(100) & 0xFF==ord('q'):
+    if cv2.waitKey(50) & 0xFF==ord('q'):
         break
-    elif cv2.waitKey(100) & counter==20:
+    elif cv2.waitKey(50) & counter==20:
         break
     
 #releasing the camera
