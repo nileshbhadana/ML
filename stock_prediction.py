@@ -13,10 +13,6 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn import linear_model
 
-# Input data files are available in the "../input/" directory.
-# For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
-
-#import os
 
 def prepare_data(df,forecast_col,forecast_out,test_size):
     label = df[forecast_col].shift(-forecast_out)#creating new column called label with the last 5 rows are nan
@@ -38,7 +34,6 @@ def prepare_data(df,forecast_col,forecast_out,test_size):
 
 
 df = pd.read_csv("/home/nilesh/Desktop/ML/stock_data_5Y.csv") #loading the csv file
-#df=df[df.symbol=='GOOG']#choosing stock symbol
 '''
 dates=[]
 prices=[]
