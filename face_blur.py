@@ -5,11 +5,11 @@ cam_cap=cv2.VideoCapture(0)
 cascade=cv2.CascadeClassifier('face.xml')
 while cam_cap.isOpened():
     status,frame=cam_cap.read()
+    #gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     #converting to hsv frame
     hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     lower_green=np.array([0,0,9])
     upper_green=np.array([133,250,250])
-    
     #creating mask
     mask=cv2.inRange(hsv,lower_green,upper_green)
     
@@ -27,7 +27,7 @@ while cam_cap.isOpened():
         upper_green=np.array([133,250,250])
         mask=cv2.inRange(hsv,lower_green,upper_green)
         blur_frame=cv2.GaussianBlur(frame[y:y+h,x:x+w],(15,15),30)'''
-        
+    #ret, mask = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)    
     final1=cv2.bitwise_and(blur_frame,frame,mask=mask)
     #final2=cv2.bitwise_and(frame,blur_frame,mask=mask_inv)
     '''
@@ -36,7 +36,7 @@ while cam_cap.isOpened():
         output = cv2.seamlessClone(blur_frame, frame, mask, center, cv2.MIXED_CLONE)
     '''
     
-    cv2.imshow('live',blur_frame)
+    #cv2.imshow('live',blur_frame)
     cv2.imshow('live2',final1)
     #cv2.imshow('live3',final2)
     #cv2.imshow('live4',mask_inv)
@@ -44,6 +44,7 @@ while cam_cap.isOpened():
     #cv2.imshow('live6',output)
     #cv2.imshow('live7',lower_green)
     #cv2.imshow('live8',upper_green)
+    #   cv2.imshow('live9',mask)
     if cv2.waitKey(2) & 0xFF == ord('q'):
         break
 
