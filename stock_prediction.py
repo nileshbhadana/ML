@@ -27,13 +27,13 @@ print(type(day),len(day))
 
 
 
-price_data_train=price_df[:-5]
-price_data_test=price_df[-5:]
+price_data_train=price_df[:-50]
+price_data_test=price_df[-50:]
 
 print(len(price_data_train),len(price_data_test))
 
-day_target_train=day_count[:-5]
-day_target_test=day_count[-5:]
+day_target_train=day_count[:-50]
+day_target_test=day_count[-50:]
 
 regr=linear_model.LinearRegression()
 regr_svm=svm.SVR()
