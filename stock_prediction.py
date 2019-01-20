@@ -9,6 +9,8 @@ Created on Sat Jan 19 02:22:04 2019
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 from sklearn import svm
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.neighbors import KNeighborsRegressor
 from sklearn import linear_model
 import matplotlib.pyplot as plt
 
@@ -37,19 +39,29 @@ day_target_test=day_count[-50:]
 
 regr=linear_model.LinearRegression()
 regr_svm=svm.SVR()
+regr_rfr=RandomForestRegressor(n_estimators=10)
+regr_knn=KNeighborsRegressor(n_neighbors=5)
 
 regr.fit(day_target_train,price_data_train)
 regr_svm.fit(day_target_train,price_data_train)
+regr_rfr.fit(day_target_train,price_data_train)
+regr_knn.fit(day_target_train,price_data_train)
 
 prediction=regr.predict(day_target_test)
 prediction_svm=regr_svm.predict(day_target_test)
-
+prediction_rfr=regr_rfr.predict(day_target_test)
+prediction_knn=regr_knn.predict(day_target_test)
 
 print(prediction)
 print(prediction_svm)
+print(prediction_rfr)
+print(prediction_knn)
 print(price_data_test)
 
 plt.plot(day_target_train,price_data_train,'r')
 plt.plot(day_target_test,price_data_test,'g')
+plt.plot(day_target_test,prediction_knn,'c')
 plt.plot(day_target_test,prediction_svm,'b')
+plt.plot(day_target_test,prediction,'k')
+plt.plot(day_target_test,prediction_rfr,'y')
 plt.show()
