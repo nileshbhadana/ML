@@ -36,7 +36,7 @@ while cam_cap.isOpened():
         output = cv2.seamlessClone(blur_frame, frame, mask, center, cv2.MIXED_CLONE)
     '''
     
-    #cv2.imshow('live',blur_frame)
+    cv2.imshow('live',blur_frame)
     cv2.imshow('live2',final1)
     #cv2.imshow('live3',final2)
     #cv2.imshow('live4',mask_inv)

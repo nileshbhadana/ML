@@ -6,6 +6,7 @@ Created on Wed Jan 16 17:42:58 2019
 @author: nilesh
 """
 import tweepy
+import textblob
 
 consumer_key = "HhxMwQjTnCB1tWbEX5fjAAKM6" 
 consumer_secret = "2dXvLlGCvlho82VkCqSJufeSjU0wxGwkS6YDNtmwoSyAQaMit0"
@@ -26,6 +27,7 @@ def getting_tweets(query):
         temp.append(j)
         print(j)
     #print(temp)
+    analysis=textblob(temp)
     print(len(temp))
 
 if __name__=='__main__':
