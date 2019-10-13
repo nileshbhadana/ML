@@ -22,6 +22,12 @@ while True:
 	green=cv2.dilate(green_img, kernal)
 	yellow=cv2.dilate(yellow_img, kernal)
 
+	split_data=train_test_split(diabetes_data,diabetes_target,test_size=0.1)
+
+	train_data,test_data,train_target,test_target=split_data
+
+	#implementing decision tree classifier
+	dsc_algo=DecisionTreeClassifier()
 	# taking bitwise and of the frames	
 	res_red = cv2.bitwise_and(frame,frame, mask= red_img)	
 	res_green = cv2.bitwise_and(frame,frame, mask= green_img)	
