@@ -8,10 +8,10 @@ Created on Wed Jan 16 17:42:58 2019
 import tweepy
 import textblob
 
-consumer_key = "HhxMwQjTnCB1tWbEX5fjAAKM6" 
-consumer_secret = "2dXvLlGCvlho82VkCqSJufeSjU0wxGwkS6YDNtmwoSyAQaMit0"
-access_key = "1081564990719623168-yRB6uCVnY1e5cf0qYe4RSQoJPXHNL7"
-access_secret = "rQLhO6XbFZw1h2WNozwZbl0JVIGSfzj458YsF32bPQbis"
+consumer_key = "HtWbEX5fjAAKM6" 
+consumer_secret = "2dXvLlGCvlhwkS6YDNtmwoSyAQaMit0"
+access_key = "CVnY1e5cf0qYe4RSQoJPXHNL7"
+access_secret = "rQLhO6X=IGSfzj458YsF32bPQbis"
 
 
 def getting_tweets(query):
